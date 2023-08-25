@@ -1,0 +1,87 @@
+.container{
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-direction: column;
+    
+}
+.rows{
+    height: 70vh;
+    overflow: scroll;
+}
+.table{
+    border: 1px solid gray;
+    margin-top:20px;
+    width: 1000px;
+
+}
+.header{
+    margin: 0px;
+    padding: 0px;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+}
+
+.fetchData{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid gray;
+    margin-top: 5px;
+    height: 50px;
+}
+.head{
+    flex: 1;
+}
+.head1{
+    flex: 2;
+}
+.singlerow{
+    width: 100%;
+}
+.check{
+    position: relative;
+    left: -20px;
+}
+
+.add-btn{
+    width: 150px;
+    height: 40px;
+    outline: none;
+    font-size: 20px;
+    font-weight: 100;
+    margin-top: 20px;
+    background-color: tomato;
+    border: none;
+}
+.send-btn{
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: 100;
+    outline: none;
+    margin-top: 20px;
+    margin-left: 10px;
+    background-color: tomato;
+    border: none;
+}
+.update-btn{
+    width: 30px;
+    height: 30px;
+    flex: 0.7;
+    background-color: tomato;
+    border: none;
+}
+.delete-btn{
+    width: 30px;
+    height: 30px;
+    flex: 0.7;
+    background-color: tomato;
+    border: none;
+    margin-left: 5px;
+}

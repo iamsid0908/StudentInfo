@@ -1,0 +1,71 @@
+*{
+    font-family: sans-serif;
+}
+
+.modal, .overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
+.overlay {
+    background: rgba(49,49,49,0.8);
+}
+.form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    width: 700px;
+    height: 500px;
+}
+.label{
+    font-size: 30px;
+    font-weight: 100;
+    position: relative;
+    left: -70px;
+}
+.name-label{
+    position: relative;
+    left: -90px;
+}
+.email-label {
+    position: relative;
+    left: -90px;
+}
+.input{
+    margin-bottom: 20px;
+    width: 250px;
+    height: 25px;
+    outline: none;
+}
+.sub-btn{
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+    background-color: tomato;
+    outline: none;
+    border: navajowhite;
+}
+.close-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    position: relative;
+    top: -400px;
+    left: 300px;
+    background-color: tomato;
+}
+.close-btn :hover{
+    cursor: hand;
+}
