@@ -3,13 +3,20 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import "./Home.css"
 import Form from './Form';
+import Updateform from './Updateform';
 
 function Home() {
 
   // all importtant states
   const [data,setData] = useState([]);
   const [popup,setpopup] = useState(false);
+  const [Updateformm,setUpdateformm] = useState(false);
   const [userIds,setUserIds] = useState([]);
+  const[userId,setoneUserIds]=useState("");
+  const [name,setName]=useState("")
+  const [phoneNo,setPhoneno]=useState("")
+  const [email,setEmail]=useState("");
+  const [hobbies,setHobbie]=useState("");
 
   // useEffect hooks call
   useEffect(() => {
@@ -20,7 +27,6 @@ function Home() {
   const fetchData = async () => {
     try {
       const response = await axios.get('http://localhost:8000/v1/user/getAllUsers');
-      console.log(response.data.data)
       setData(response.data.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -31,6 +37,16 @@ function Home() {
   
   const toggle=()=>{
     setpopup(!popup);
+  }
+    const handleUpdate = (name,phoneNo,email,hobbies,id)=>{
+    setName(name)
+    setPhoneno(phoneNo)
+    setEmail(email)
+    setHobbie(hobbies)
+    setoneUserIds(id)
+    // console.log(name + phoneNo+ email+ hobbies)
+    setUpdateformm(!Updateformm);
+    
   }
 
   // this function help you send emails
@@ -102,7 +118,7 @@ function Home() {
                 <div className='head1'>{item.phoneNo}</div>
                 <div className='head1'>{item.email}</div>
                 <div className='head'>{item.hobbies}</div>
-                <button className='update-btn '>Update</button>
+                <button className='update-btn ' onClick={()=>handleUpdate(item.name,item.phoneNo,item.email,item.hobbies,item._id)} >Update</button>
                 <button className='delete-btn ' onClick={()=>handleUserDelete(item._id)}>Delete</button>
               </div>
             </div>
@@ -114,6 +130,17 @@ function Home() {
     <button className='send-btn' onClick={handleEmail}>SEND</button>
     </div>
     
+
+  {Updateformm &&(
+    <div>
+    <Updateform name={name} phoneNo={phoneNo} email={email} hobbies={hobbies}userId={userId}  Updateformm= {Updateformm} setUpdateformm = {setUpdateformm}/>
+    </div>
+  )}
+    
+  
+    
+
+
     {popup &&(
     <div>
       <Form popup={popup} setpopup={setpopup} />
