@@ -26,7 +26,7 @@ function Home() {
   // fetching all the user data
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/v1/user/getAllUsers');
+      const response = await axios.get('https://student-siddharth.onrender.com/v1/user/getAllUsers');
       setData(response.data.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -56,7 +56,7 @@ function Home() {
         alert("plese add some element")
         return;
       }
-      const response = await axios.post("http://localhost:8000/v1/user/sendemail",userIds,{
+      const response = await axios.post("https://student-siddharth.onrender.com/v1/user/sendemail",userIds,{
       headers: {
         'Content-Type': 'application/json',
       },
@@ -78,7 +78,7 @@ function Home() {
 
   const handleUserDelete = async(id)=>{
     try{
-      const response = await axios.delete(`http://localhost:8000/v1/user/deleteUsers/${id}`)
+      const response = await axios.delete(`https://student-siddharth.onrender.com/v1/user/deleteUsers/${id}`)
       console.log(response);
       alert("deleted")
       // window.location.reload(true);

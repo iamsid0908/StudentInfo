@@ -23,7 +23,7 @@ function Updateform({name,phoneNo,email,hobbies,userId,Updateformm,setUpdateform
     const handleUpdateSubmit = async (e)=>{
         
        try{
-        await axios.put("http://localhost:8000/v1/user/updateUsers",userData);
+        await axios.put("https://student-siddharth.onrender.com/v1/user/updateUsers",userData);
         alert("sumitted")
        }catch(e){
         console.log(e)

@@ -18,7 +18,7 @@ function Form({popup,setpopup}) {
         e.preventDefault();
         try{
             console.log(data)
-            await axios.post("http://localhost:8000/v1/user/createUser",data)
+            await axios.post("https://student-siddharth.onrender.com/v1/user/createUser",data)
             setpopup(!popup)
             alert("sumitted")
         }catch(e){
